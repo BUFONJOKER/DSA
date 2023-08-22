@@ -40,16 +40,16 @@ public class BinaryTree_Implementation {
         }
     }
 
-    public static void preOrder(Node root){
+    public static void preOrderTraversal(Node root){
         if(root == null){
             return;
         }
 
         System.out.print(root.data+" ");
 
-        preOrder(root.left);
+        preOrderTraversal(root.left);
         
-        preOrder(root.right);
+        preOrderTraversal(root.right);
     
     }
 
@@ -63,7 +63,7 @@ public class BinaryTree_Implementation {
 
         // System.out.println(root.data);
 
-        preOrder(root);
+        preOrderTraversal(root);
 
         System.out.println();
     }
