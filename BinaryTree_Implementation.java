@@ -1,4 +1,6 @@
 public class BinaryTree_Implementation {
+
+    // BINARY TREE IMPLEMENTATION
     static class Node {
         
         int data;
@@ -40,18 +42,51 @@ public class BinaryTree_Implementation {
         }
     }
 
+    // PRE-ORDER TRAVERSAL
     public static void preOrderTraversal(Node root){
         if(root == null){
             return;
         }
 
-        System.out.print(root.data+" ");
+        System.out.print(root.data + " ");
 
         preOrderTraversal(root.left);
         
         preOrderTraversal(root.right);
     
     }
+
+    // IN-ORDER TRAVERSAL
+    public static void inOrderTraversal(Node root){
+
+        if(root == null){
+            return;
+        }
+
+        inOrderTraversal(root.left);
+
+        System.out.print(root.data + " ");
+
+        inOrderTraversal(root.right);
+    }
+
+    // POST-ORDER TRAVERSAL
+
+    public static void postOrderTraversal(Node root){
+
+        if(root == null){
+            return;
+        }
+
+        postOrderTraversal(root.left);
+
+        postOrderTraversal(root.right);
+
+        System.out.print(root.data + " ");
+
+        
+    }
+
 
     public static void main(String[] args) {
 
@@ -63,7 +98,15 @@ public class BinaryTree_Implementation {
 
         // System.out.println(root.data);
 
-        preOrderTraversal(root);
+        // preOrderTraversal(root);
+
+        // System.out.println();
+
+        // inOrderTraversal(root);
+
+        postOrderTraversal(root);
+
+        System.out.println();
 
         System.out.println();
     }
