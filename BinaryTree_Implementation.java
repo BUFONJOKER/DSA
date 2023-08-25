@@ -1,3 +1,4 @@
+import java.util.*;
 public class BinaryTree_Implementation {
 
     // BINARY TREE IMPLEMENTATION
@@ -87,6 +88,53 @@ public class BinaryTree_Implementation {
         
     }
 
+    // LEVEL-ORDER TRAVERSAL
+    public static void levelOrderTraversal(Node root){
+        
+        if(root == null){
+            return;
+        }
+
+        Queue<Node> q = new LinkedList<>();
+        
+        q.add(root);
+        
+        q.add(null);
+
+        while(!q.isEmpty()){
+            
+            Node currentNode = q.remove();
+
+            if( currentNode == null){
+                
+                System.out.println();
+
+                if(q.isEmpty()){
+
+                    break;
+                }
+
+                else{
+                    q.add(null);
+                }
+                
+            }
+
+            else{
+
+                System.out.print(currentNode.data + " ");
+
+                if(currentNode.left != null){
+                    q.add(currentNode.left);
+                }
+
+                if(currentNode.right != null){
+                    q.add(currentNode.right);
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -104,7 +152,9 @@ public class BinaryTree_Implementation {
 
         // inOrderTraversal(root);
 
-        postOrderTraversal(root);
+        // postOrderTraversal(root);
+
+        levelOrderTraversal(root);
 
         System.out.println();
 
