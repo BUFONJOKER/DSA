@@ -161,6 +161,20 @@ public class BinaryTree_Implementation {
 
     }
 
+    // HEIGHT OF TREE
+    public static int heightOfTree(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int leftHeight = heightOfTree(root.left);
+        int rightHeight = heightOfTree(root.right);
+
+        int totalHeight = Math.max(leftHeight, rightHeight) + 1;
+
+        return totalHeight;
+    }
+
     public static void main(String[] args) {
 
         System.out.println();
@@ -183,7 +197,9 @@ public class BinaryTree_Implementation {
 
         // System.out.println(countOfNodes(root));
 
-        System.out.println(sumOfNodes(root));
+        // System.out.println(sumOfNodes(root));
+
+        System.out.println(heightOfTree(root));
 
         System.out.println();
 
