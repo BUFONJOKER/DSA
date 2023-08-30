@@ -148,6 +148,18 @@ public class BinaryTree_Implementation {
 
     }
 
+    // SUM OF NODES
+    public static int sumOfNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int leftNodesSum = sumOfNodes(root.left);
+        int rightNodesSum = sumOfNodes(root.right);
+
+        return leftNodesSum + rightNodesSum + root.data;
+
+    }
 
     public static void main(String[] args) {
 
@@ -169,7 +181,9 @@ public class BinaryTree_Implementation {
 
         // levelOrderTraversal(root);
 
-        System.out.println(countOfNodes(root));
+        // System.out.println(countOfNodes(root));
+
+        System.out.println(sumOfNodes(root));
 
         System.out.println();
 
