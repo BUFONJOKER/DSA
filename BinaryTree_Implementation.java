@@ -135,6 +135,19 @@ public class BinaryTree_Implementation {
         }
     }
 
+    // COUNT OF NODES
+    public static int countOfNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int leftNodes = countOfNodes(root.left);
+        int rightNodes = countOfNodes(root.right);
+
+        return leftNodes + rightNodes + 1;
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -154,7 +167,9 @@ public class BinaryTree_Implementation {
 
         // postOrderTraversal(root);
 
-        levelOrderTraversal(root);
+        // levelOrderTraversal(root);
+
+        System.out.println(countOfNodes(root));
 
         System.out.println();
 
